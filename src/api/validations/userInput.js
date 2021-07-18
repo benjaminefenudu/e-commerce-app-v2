@@ -4,8 +4,8 @@ const Joi = require("joi");
 const signUpValidation = (user) => {
   const schema = Joi.object({
     email: Joi.string().min(6).required().email(),
-    fullName: Joi.string().min(2).max(20).required(),
-    password: Joi.string().min(6).max(20).required(),
+    fullName: Joi.string().min(2).max(40).required(),
+    password: Joi.string().min(6).max(40).required(),
     confirmPassword: Joi.string().required().valid(Joi.ref("password")),
   }).unknown();
 
